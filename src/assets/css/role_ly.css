@@ -1,0 +1,150 @@
+.role_ly {
+    width: 100%;
+    height: 100%;
+    background: url('https://uploadstatic.mihoyo.com/contentweb/20200515/2020051511073340128.jpg') no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.role_ly-top {
+    width: 90%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.role_ly-top-img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.role_ly-top-img>img {
+    height: 100%;
+    width: auto;
+}
+
+.role_ly-top-name {
+    position: absolute;
+    top: 150px;
+    left: 300px;
+}
+
+.role_ly-top-name>img {
+    height: 108px;
+}
+
+.role_ly-top-name::before {
+    display: block;
+    content: '';
+    width: 180px;
+    height: 4px;
+    background: #e3bc8c;
+}
+
+.role_ly-top-cv {
+    width: 280px;
+    height: 54px;
+    position: absolute;
+    top: 280px;
+    left: 300px;
+    background-color: #cca574;
+    display: flex;
+    align-items: center;
+}
+
+.role_ly-top-cv>div {
+    margin-left: 5px;
+    color: #24333c;
+    font-size: 24px;
+}
+
+.role_ly-top-introduce {
+    position: absolute;
+    top: 350px;
+    left: 300px;
+    width: 500px;
+    height: auto;
+    display: flex;
+    padding: 10px 0 10px 15px;
+    box-sizing: border-box;
+    background: rgba(1, 1, 1, 0.5);
+    font-size: 16px;
+    color: #fff;
+    margin-top: 17px;
+    line-height: 26px;
+    font-size: 16px;
+}
+
+.role_ly-top-introduce::before {
+    flex-shrink: 0;
+    display: block;
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url('../images/介绍.png') center no-repeat;
+    background-size: 20px;
+    margin-right: 24px;
+    margin-top: 4px;
+}
+
+.role_ly-btm {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(204, 204, 204, 0.2);
+    display: flex;
+    justify-content: center;
+}
+
+.role_ly-btm>ul {
+    width: 150px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.role_ly-btm>ul>li {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.role_ly-btm>ul .active {
+    border: 1px solid white;
+}
+
+.role_ly-btm>ul>li:hover {
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+@keyframes fadeInDown {
+    0% {
+        margin-left: -200px;
+        opacity: 0;
+    }
+    100% {
+        margin-left: 0px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        margin-left: -200px;
+        opacity: 0;
+    }
+    100% {
+        margin-left: 0px;
+        opacity: 1;
+    }
+}

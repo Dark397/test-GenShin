@@ -1,0 +1,84 @@
+.tab {
+    width: 100%;
+    height: 100%;
+    /* background-color: wheat; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tab-top {
+    width: 100%;
+    height: 150px;
+    margin-top: 50px;
+    /* background-color: saddlebrown; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.tab-top .one,
+.two,
+.three {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab-top .one {
+    background: url('../images/munde.png');
+    background-size: cover;
+    /* background-color: skyblue; */
+}
+
+.tab-top .two {
+    background: url('../images/liyue.png');
+    background-size: cover;
+}
+
+.tab-top .three {
+    background: url('../images/daoqi.png');
+    background-size: cover;
+}
+
+.tab-top .active {
+    border-radius: 25%;
+    box-shadow: -10px 0 10px 3px rgb(255, 217, 247), 0px -10px 10px 3px rgb(239, 182, 255), 10px 0 10px 3px rgb(221, 147, 255), 0 10px 10px 3px rgb(231, 122, 255);
+}
+
+.tab-btm {
+    margin-top: 20px;
+    width: 100%;
+    height: 90%;
+}
+
+.tab-lest {
+    width: 100%;
+    height: 10%;
+    /* background-color: skyblue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab-lest .tab-lest-more {
+    width: 150px;
+    height: 70%;
+    background-color: rgba(255, 175, 204, 0.929);
+    border: 1px solid rgb(253, 109, 161);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.tab-lest .tab-lest-more:hover {
+    background-color: rgb(235, 135, 220);
+    border: 1px solid rgb(255, 37, 182);
+    transition: 0.3s;
+}

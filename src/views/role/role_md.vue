@@ -1,0 +1,222 @@
+<template>
+    <div class="role_md">
+        <div class="role_md-top">
+            <div class="role_md-top-img" v-for="(itemCon,index) in Exhibition" :key="index" v-show="index===currentIndex">
+                <img class="fadeInDown" :src="itemCon.imgurl">
+                <div class="role_md-top-name">
+                    <img :src="itemCon.name" alt="">
+                </div>
+                <div class="role_md-top-cv">
+                    <img src="../../assets/images/cv.png" alt="">
+                    <div>CV:&nbsp;{{itemCon.cv}}</div>
+                </div>
+                <div class="role_md-top-introduce">
+                    {{itemCon.introduce}}
+                </div>
+            </div>
+        </div>
+        <div class="role_md-btm">
+            <ul>
+                <li v-for="(item,index) in choice" :key="index" :class="{active:index == currentIndex}" @click="change(index)">
+                    <img :src="item.imgurl" alt="">
+                </li>
+            </ul>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    name:"role_md",
+    data() {
+        return {
+            currentIndex:0,
+            choice: [
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20220127/2022012718344593599.png'),
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20220127/2022012718350213870.png')
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20200306/2020030617000181697.png')
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20200306/2020030617001674227.png')
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20200306/2020030617005720579.png')
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20200306/2020030617015669833.png')
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20200306/2020030617025961375.png')
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20200306/2020030617031747812.png')
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20200306/2020030617033181769.png')
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20200312/2020031219222320482.png')
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20200315/2020031516092797889.png')
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20200330/2020033019074664412.png')
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20200724/2020072414340926231.png')
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20220127/2022012718352334387.png')
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20201106/2020110614164694989.png')
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20201216/2020121617552012082.png')
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20220127/2022012718290075546.png')
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20210508/2021050817091079399.png')
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20210825/2021082511163174110.png')
+                }
+
+            ],
+            Exhibition:[
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20220127/2022012718113218873.png'),
+                    name:('https://uploadstatic.mihoyo.com/contentweb/20190926/2019092620142281505.png'),
+                    cv:'林簌',
+                    introduce:'身为西风骑士团的代理团长，琴一直忠于职守，为人们带来安宁。虽然并非天赋异禀，但通过刻苦训练，如今的她已然能够独当一面。当风魔龙的威胁开始临近，这位可靠的代理团长早已做好了准备，誓要守护蒙德。'
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20220127/2022012718135119594.png'),
+                    name:('https://uploadstatic.mihoyo.com/contentweb/20190926/2019092620153436780.png'),
+                    cv:'蔡书瑾',
+                    introduce:'活泼率直的少女，是蒙德城中唯一的侦察骑士。擅长使用风之翼的安柏，连续三年蝉联蒙德城的「飞行冠军」。作为西风骑士团的新星，今天的安柏依然活跃在第一线。'
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20190926/2019092620183491239.png'),
+                    name:('https://uploadstatic.mihoyo.com/contentweb/20190926/2019092620183862811.png'),
+                    cv:'钟可',
+                    introduce:'她是钟情于睡眠的知性魔女。作为西风骑士团图书馆的管理员，聪明的丽莎总能以最有效的方式将遇到的问题统统解决。虽然看似慵懒，但处变不惊的她似乎早已将一切尽数掌控。'
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20190926/2019092620194519600.png'),
+                    name:('https://uploadstatic.mihoyo.com/contentweb/20190926/2019092620194979094.png'),
+                    cv:'孙晔',
+                    introduce:'在西风骑士团里，凯亚是代理团长最信任的副手。凡是交托于他的任务，总能得到解决。在蒙德城中，风趣幽默的他同样深受人们的喜爱，然而这位谈吐不凡的骑士隐约有着什么不为人知的秘密。'
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20200611/2020061121102532076.png'),
+                    name:('https://uploadstatic.mihoyo.com/contentweb/20190926/2019092620221565877.png'),
+                    cv:'宋媛媛',
+                    introduce:'既是西风教会的祈礼牧师，又是蒙德城的闪耀偶像。对于习惯了传统吟游诗人的蒙德来说，「偶像」是还不习惯的新生事物。但在蒙德，人人都爱芭芭拉。这就是自由之都的自由精神——对大家投来的喜爱，芭芭拉是这样满怀感激地总结的。'
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20200611/2020061121140891147.png'),
+                    name:('https://uploadstatic.mihoyo.com/contentweb/20190926/2019092620243557115.png'),
+                    cv:'马洋',
+                    introduce:'身为蒙德城第一富豪，风度翩翩的迪卢克总是以完美的贵公子形象示人。然而他真实的一面，是秉承坚定信念的战士，他那「不惜一切守护蒙德」的意志犹如火焰般炽热，令他能以恐怖的攻势，毫不留情地将一切敌人击溃。'
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20191122/2019112214335095633.png'),
+                    name:('https://uploadstatic.mihoyo.com/contentweb/20191018/2019101817251653573.png'),
+                    cv:'周帅',
+                    introduce:'在蒙德坊间的传闻里，有人说他是被狼收养的弃婴，有人说他是狼灵的化身…利爪与苍雷在飞驰，狼永远与荒野为伴。时至今日，狼少年仍凭借他野兽般的直觉，在林间与狼群一起奔猎。'
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20191122/2019112214234192544.png'),
+                    name:('https://uploadstatic.mihoyo.com/contentweb/20191122/2019112214234923416.png'),
+                    cv:'喵☆酱',
+                    introduce:'来路不明的吟游诗人，有时唱一些老掉牙的旧诗，有时又会唱出谁也没听过的新歌。喜欢苹果和热闹的气氛，讨厌奶酪和一切黏糊糊的物质。在引导「风」的元素力时，元素的塑形往往外显为羽毛，因为他很中意看上去轻飘飘的东西。'
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20200103/2020010311083818450.png'),
+                    name:('https://uploadstatic.mihoyo.com/contentweb/20200103/2020010311085148050.png'),
+                    cv:'花玲',
+                    introduce:'西风骑士团，火花骑士！永远伴随闪光与爆炸出现！——然后在琴团长严厉的目光注视下默默消失。虽然新炸药的配方，很多都是在被关禁闭的时候想出来的……但如果不被关禁闭的话，就更好了。'
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20200312/2020031219451784892.png'),
+                    name:('https://uploadstatic.mihoyo.com/contentweb/20200312/2020031219111556279.png'),
+                    cv:'穆雪婷',
+                    introduce:'蒙德城冒险家协会为数不多的年轻冒险家，一直被莫名的「不幸」所纠缠。他所创立的「班尼冒险团」，在「不幸」的影响下不断有成员长期告假，目前仅有团长一人在队活动，已处于解散边缘。但在班尼特诚恳的请求下，蒙德城冒险家协会接待员凯瑟琳小姐为他保留了「班尼冒险团」的编制。'
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20200315/2020031516093066687.png'),
+                    name:('https://uploadstatic.mihoyo.com/contentweb/20200315/2020031516094018231.png'),
+                    cv:'宴宁',
+                    introduce:'和蒙德城大多数普通年轻人一样，诺艾尔梦想着成为一名光荣的西风骑士。尽管还没有获得骑士资格，她仍以女仆的身份在骑士团里工作，努力学习着骑士的言行礼仪。她始终相信，只要坚持努力，总有一天能穿上那副象征荣耀的甲胄。'
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20200402/2020040210433197373.png'),
+                    name:('https://uploadstatic.mihoyo.com/contentweb/20200330/2020033019083321421.png'),
+                    cv:'Mace&赵悦程',
+                    introduce:'自称「断罪之皇女」，与名为奥兹的漆黑夜鸦同行的神秘少女。目前正以调查员身份供职于冒险家协会。通过自己的特殊能力加上奇妙的个性，还有本人不愿意承认的努力，菲谢尔成为了冒险家协会调查员中的新星，且成功赢得了大家的认可。'
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20200724/2020072414341528227.png'),
+                    name:('https://uploadstatic.mihoyo.com/contentweb/20200724/2020072414341918570.png'),
+                    cv:'小敢',
+                    introduce:'对世间万物抱有强烈好奇心的炼金术士，隶属于西风骑士团，是阿贝多的助手。研究方向为「生物炼金」。'
+                },
+                {
+                    imgurl:('https://webstatic.mihoyo.com/upload/contentweb/2022/03/04/50a8abf4f443098f1196a6d6a5e8f049_1428522642031281646.png'),
+                    name:('https://uploadstatic.mihoyo.com/contentweb/20200828/2020082814334080742.png'),
+                    cv:"陈婷婷",
+                    introduce:'神秘的少女占星术士，声称自己是「伟大的占星术士莫娜」，拥有与名号相符的不俗实力，博学而高傲。尽管过着拮据、清贫的生活，但她坚决不用占卜来牟利…正是这种坚持，导致莫娜总是在为生计发愁。'
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20201106/2020110614165336314.png'),
+                    name:('https://uploadstatic.mihoyo.com/contentweb/20201106/2020110614182351716.png'),
+                    cv:'诺亚',
+                    introduce:'「猫尾酒馆」的超人气调酒师，蒙德酒业的超新星，传统势力的最大挑战者。出身于清泉镇的猫耳猫尾少女，只要经迪奥娜之手调制过的酒类，都会变成难以想象的美味佳酿。'
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20201216/2020121617552612199.png'),
+                    name:('https://uploadstatic.mihoyo.com/contentweb/20201216/2020121617553166600.png'),
+                    cv:'Mace',
+                    introduce:'阿贝多——现定居蒙德的炼金术士，效力于西风骑士团。「天才」、「白垩之子」或「调查队长」…他不怎么在意称号和名望，只专注于研究课题。'
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20220127/2022012718284773624.png'),
+                    name:('https://uploadstatic.mihoyo.com/contentweb/20220128/2022012817502831365.png'),
+                    cv:'张安琪',
+                    introduce:'罗莎莉亚——蒙德城西风教会下属修女。除了打扮哪里都不像神职人员的怪异修女。冷淡、锋利，如刀锋般锐利的女人。'
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20210508/2021050818340141562.png'),
+                    name:('https://uploadstatic.mihoyo.com/contentweb/20210508/2021050817102294597.png'),
+                    cv:'子音',
+                    introduce:'优菈——常年在外作战的「浪花骑士」，反叛的旧贵族末裔。生于旧日宗室，身负罪恶血脉之人，的确需要独特的处世技巧，才能在偏见的高墙下安然行走。当然，这并不妨碍她与家族决裂，作为卓越的「浪花骑士」，在外游猎蒙德的敌人，完成她那意义独特的「复仇」。'
+                },
+                {
+                    imgurl:('https://uploadstatic.mihoyo.com/contentweb/20210825/2021082511163623393.png'),
+                    name:('https://uploadstatic.mihoyo.com/contentweb/20210825/2021082511164241801.png'),
+                    cv:'沐霏',
+                    introduce:'来自诺拉的机敏猎手。随时能为正当之事挽弓放箭。'
+                }
+            ]
+        };
+    },
+    methods:{
+        change(index){
+                this.currentIndex = index
+            },
+    }
+}
+</script>
+
+<style>
+@import '../../assets/css/role_md.css';
+</style>
